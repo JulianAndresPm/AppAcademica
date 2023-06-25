@@ -89,10 +89,30 @@ Route::post('/profesores/editar/{id}', [Profesores::class, 'editar'])->name('edi
 Route::get('/profesores/eliminar/{id}', [Profesores::class, 'eliminar']) ->name('eliminarProf');
 
 
+//---------------------------------------Estudiantes----------------------------------------
 
-//---------------------------------------######----------------------------------------
 
-Route::get('/estudiantes/listado', [Estudiantes::class, 'index']);
+
+Route::get('/estudiantes/listado', [Estudiantes::class, 'index'])->name('listadoEst');
+
+//Registro
+
+Route::get('/estudiantes/registro', [Estudiantes::class, 'form_registro']);
+
+Route::post('/estudiantes/registro',[Estudiantes::class, 'registrar']);
+
+//Editar
+
+Route::get('/estudiantes/editar/{id}', [Estudiantes::class, 'form_editar'])->name('editarEst_form');
+
+Route::post('/estudiantes/editar/{id}', [Estudiantes::class, 'editar'])->name('editarEstudiantes');
+
+//eliminar
+
+Route::get('/estudiantes/eliminar/{id}', [Estudiantes::class, 'eliminar']) ->name('eliminarEst');
+
+
+////////////////////////////////////////////////////////#######/////////////////////////////////////////////
 
 Route::get('/regnotas/listado', [Calificaciones::class, 'index']);
 

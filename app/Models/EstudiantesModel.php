@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EstudiantesModel extends Model
 {
-    use HasFactory;
+    protected $table = 'estudiantes';
+    protected $primaryKey = 'codestudiante';
+    public $timestamps = true;
 }
