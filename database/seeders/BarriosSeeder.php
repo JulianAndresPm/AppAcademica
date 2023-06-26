@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
 
 class BarriosSeeder extends Seeder
 {
@@ -43,7 +47,7 @@ class BarriosSeeder extends Seeder
                 'codbarrio' => '50',
                 'nombarrio' => 'San Diego Norte',
                 'estbarrio' => '5',
-                'comuna' => '12'
+                'comuna' => '3'
             ],
         ];
 

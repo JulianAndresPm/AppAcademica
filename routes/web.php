@@ -91,8 +91,6 @@ Route::get('/profesores/eliminar/{id}', [Profesores::class, 'eliminar']) ->name(
 
 //---------------------------------------Estudiantes----------------------------------------
 
-
-
 Route::get('/estudiantes/listado', [Estudiantes::class, 'index'])->name('listadoEst');
 
 //Registro

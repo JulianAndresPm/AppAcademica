@@ -20,8 +20,9 @@ class Estudiantes extends Controller
     }
 
     public function registrar(Request $r){
+
         $estudiantes = new EstudiantesModel();
-        $estudiantes = new EstudiantesModel();
+
         $estudiantes->codestudiante = $r->input('codestudiante');
         $estudiantes->nomestudiante = $r->input('nomestudiante');
         $estudiantes->edaestudiante = $r->input('edaestudiante');
@@ -30,6 +31,7 @@ class Estudiantes extends Controller
         $estudiantes->ciudad = $r->input('ciudad');
         $estudiantes->barrio = $r->input('barrio');
         $estudiantes->programa = $r->input('programa');
+        $estudiantes->save();
         return redirect()->route('listadoEst');
     }
 
@@ -45,7 +47,7 @@ class Estudiantes extends Controller
     }
 
     public function editar(Request $e, $id){
-        $estudiantes = new EstudiantesModel();
+        $estudiantes = EstudiantesModel::findOrfail($id);
         $estudiantes->codestudiante = $e->input('codestudiante');
         $estudiantes->nomestudiante = $e->input('nomestudiante');
         $estudiantes->edaestudiante = $e->input('edaestudiante');
@@ -55,7 +57,7 @@ class Estudiantes extends Controller
         $estudiantes->barrio = $e->input('barrio');
         $estudiantes->programa = $e->input('programa');
         $estudiantes ->save();
-        return redirect()->route('listado');
+        return redirect()->route('listadoEst');
     }
 
 }
