@@ -24,6 +24,10 @@
         <input type="text" class="form-control" id="edaestudiante" name="edaestudiante" placeholder="" >
     </div>
     <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Fecha Nac</label>
+        <input type="date" class="form-control" id="fechestudiante" name="fechestudiante" placeholder="" >
+    </div>
+    <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Sexo</label>
         <input type="text" class="form-control" id="sexestudiante" name="sexestudiante" placeholder="" >
     </div>

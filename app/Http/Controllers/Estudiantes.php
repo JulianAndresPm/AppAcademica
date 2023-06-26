@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\EstudiantesModel;
+
 
 class Estudiantes extends Controller
 {
     public function index(){
         $estudiantes = DB::table('estudiantes')->get();
-        return view('estudiantes.estudiantes',['estudiantes' => $estudiantes]);
+        return view('estudiantes.listado',['estudiantes' => $estudiantes]);
     }
 
     public function form_registro(){
@@ -16,6 +20,7 @@ class Estudiantes extends Controller
     }
 
     public function registrar(Request $r){
+        $estudiantes = new EstudiantesModel();
         $estudiantes = new EstudiantesModel();
         $estudiantes->codestudiante = $r->input('codestudiante');
         $estudiantes->nomestudiante = $r->input('nomestudiante');
@@ -25,7 +30,6 @@ class Estudiantes extends Controller
         $estudiantes->ciudad = $r->input('ciudad');
         $estudiantes->barrio = $r->input('barrio');
         $estudiantes->programa = $r->input('programa');
-        $estudiantes ->save();
         return redirect()->route('listadoEst');
     }
 
@@ -50,7 +54,7 @@ class Estudiantes extends Controller
         $estudiantes->ciudad = $e->input('ciudad');
         $estudiantes->barrio = $e->input('barrio');
         $estudiantes->programa = $e->input('programa');
-        $profesores ->save();
+        $estudiantes ->save();
         return redirect()->route('listado');
     }
 
